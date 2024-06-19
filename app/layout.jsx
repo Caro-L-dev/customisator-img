@@ -11,8 +11,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="h-full">
-      <body className={clsx(inter.className, "h-full")}>{children}</body>
+    <html lang="fr" className="h-full">
+      <body
+        suppressHydrationWarning={true}
+        className={clsx(inter.className, "h-full")}
+      >
+        {children}
+      </body>
     </html>
   );
 }
