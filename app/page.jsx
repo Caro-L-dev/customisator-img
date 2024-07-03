@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 import InputFile from "./components/common/input/InputFile";
 import InputRange from "./components/common/input/InputRange";
+import { ImageGenerator } from "./components/common/ImageGenerator";
 
 export default function Home() {
   const [settings, setSettings] = useState({
@@ -75,7 +75,9 @@ export default function Home() {
           />
         </div>
       </div>
-      <div>{image ? <Image src={image.src} alt="alt" /> : null}</div>
+      <div className="flex flex-1 max-w-md lg:max-w-none border overflow-hidden size-fit">
+        <ImageGenerator settings={settings} image={image} />
+      </div>
     </main>
   );
 }
